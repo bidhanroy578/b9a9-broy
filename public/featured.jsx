@@ -1,0 +1,88 @@
+[
+    {
+      "id": 1,
+      "title": "Skyline Penthouse - New York",
+      "category": "Penthouse",
+      "location": "Manhattan, New York, USA",
+      "price": "$50,000,000",
+      "size": "12,000 sq ft",
+      "bedrooms": 6,
+      "bathrooms": 8,
+      "status": "For Sale",
+      "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+      "features": ["Infinity Pool", "Private Elevator", "Smart Home System", "360° City View"],
+      "description": "Experience the pinnacle of luxury in this breathtaking Manhattan penthouse, offering an unrivaled skyline view of New York City. Designed with floor-to-ceiling windows, this residence features an infinity pool, a private elevator, and an advanced smart home system. The grand master suite includes a spa-like bathroom and a walk-in closet, while the gourmet kitchen is fitted with top-of-the-line appliances. The spacious living and dining areas boast exquisite finishes, making this penthouse perfect for elite living and high-profile entertaining. Located in the heart of Manhattan, you're just minutes away from the finest restaurants, designer boutiques, and world-class entertainment."
+    },
+    {
+      "id": 2,
+      "title": "Oceanfront Villa - Maldives",
+      "category": "Beachfront Villa",
+      "location": "Malé, Maldives",
+      "price": "$80,000,000",
+      "size": "18,000 sq ft",
+      "bedrooms": 8,
+      "bathrooms": 10,
+      "status": "For Sale",
+      "image": "https://images.unsplash.com/photo-1583182334904-28d1a4d7c38d",
+      "features": ["Private Beach", "Overwater Bungalow", "Infinity Pool", "Personal Yacht Dock"],
+      "description": "Welcome to an exclusive slice of paradise in the Maldives, a private oceanfront villa designed for the ultimate luxurious escape. This sprawling 18,000 sq ft estate offers direct access to crystal-clear waters, featuring an overwater bungalow, a private beach, and a stunning infinity pool that appears to blend into the ocean. With eight lavish bedrooms and ten spa-like bathrooms, every inch of this estate is designed to provide serenity and indulgence. Enjoy breathtaking sunset views from the open-concept living areas, or arrive in style via the personal yacht dock. A haven of tranquility, perfect for high-profile individuals seeking privacy and beauty."
+    },
+    {
+      "id": 3,
+      "title": "Royal Palace - Dubai",
+      "category": "Mansion",
+      "location": "Palm Jumeirah, Dubai, UAE",
+      "price": "$150,000,000",
+      "size": "25,000 sq ft",
+      "bedrooms": 10,
+      "bathrooms": 12,
+      "status": "For Sale",
+      "image": "https://images.unsplash.com/photo-1580741637464-4fe5c2d0f5c7",
+      "features": ["Gold-Plated Interiors", "Private Helipad", "Indoor Waterfall", "Underground Garage"],
+      "description": "This opulent Royal Palace in Dubai defines grandeur, nestled in the exclusive Palm Jumeirah. Covering 25,000 sq ft, the estate boasts ten lavish bedrooms and twelve exquisite bathrooms, each adorned with gold-plated interiors and the finest craftsmanship. The grand foyer welcomes you with an indoor waterfall, leading to spacious living areas decorated with intricate chandeliers and Italian marble flooring. For elite travelers, the private helipad ensures swift access. Entertainment facilities include a state-of-the-art home theater, a temperature-controlled wine cellar, and an infinity pool overlooking the Arabian Gulf. With an underground garage for a luxury car collection, this residence is pure perfection."
+    },
+    {
+      "id": 4,
+      "title": "Secluded Island Retreat",
+      "category": "Private Island",
+      "location": "Fiji Islands",
+      "price": "$100,000,000",
+      "size": "Entire 50-Acre Island",
+      "bedrooms": 12,
+      "bathrooms": 14,
+      "status": "For Sale",
+      "image": "https://images.unsplash.com/photo-1575733149743-2cedfaef7f02",
+      "features": ["Private Airport", "Multiple Villas", "Coral Reef Diving", "Luxury Spa"],
+      "description": "An unparalleled opportunity to own an entire 50-acre private island in the breathtaking Fiji Islands. This secluded paradise offers multiple luxurious villas, each with panoramic ocean views and private infinity pools. The island features a state-of-the-art spa, world-class dining areas, and a private airport for seamless travel. Explore the vibrant marine life with exclusive coral reef diving experiences, or relax on pristine beaches with absolute privacy. Designed for royalty, this retreat provides a one-of-a-kind lifestyle surrounded by tropical beauty. Ideal for an ultra-high-net-worth individual looking for peace, exclusivity, and world-class luxury in a tropical haven."
+    },
+    {
+      "id": 5,
+      "title": "Cliffside Mega Mansion",
+      "category": "Mansion",
+      "location": "Los Angeles, California, USA",
+      "price": "$75,000,000",
+      "size": "20,000 sq ft",
+      "bedrooms": 9,
+      "bathrooms": 11,
+      "status": "For Sale",
+      "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+      "features": ["Glass Infinity Pool", "Underground Wine Cellar", "Movie Theater", "Smart Security System"],
+      "description": "Perched high above Los Angeles with sweeping views of the Pacific Ocean, this 20,000 sq ft cliffside mansion is a modern architectural masterpiece. Designed with seamless indoor-outdoor living, it features a breathtaking glass infinity pool that extends toward the skyline. Entertain in style with a private movie theater, an underground wine cellar, and a stunning rooftop lounge. The master suite includes a spa-like bathroom and a massive walk-in closet. Equipped with a cutting-edge smart security system, this home ensures privacy and safety. Located in an ultra-exclusive neighborhood, this residence embodies luxury, comfort, and unmatched prestige."
+    },
+    {
+      "id": 6,
+      "title": "Historic European Castle",
+      "category": "Castle",
+      "location": "Loire Valley, France",
+      "price": "$120,000,000",
+      "size": "30,000 sq ft",
+      "bedrooms": 15,
+      "bathrooms": 20,
+      "status": "For Sale",
+      "image": "https://images.unsplash.com/photo-1568605114967-8130f3a36994",
+      "features": ["16th Century Architecture", "Lavish Gardens", "Private Chapel", "Grand Ballroom"],
+      "description": "Step into history with this extraordinary 16th-century castle located in France’s picturesque Loire Valley. Spanning 30,000 sq ft, this meticulously preserved estate offers the once-in-a-lifetime chance to own a true European masterpiece. Featuring 15 opulent bedrooms and 20 bathrooms, this castle boasts original architectural details, including hand-painted ceilings, antique chandeliers, and grand fireplaces. Lavish gardens surround the estate, while a private chapel and a majestic ballroom add to its regal appeal. Whether used as a private residence or an exclusive luxury retreat, this castle represents the pinnacle of historical elegance and European aristocracy." 
+    } 
+]
+   
+  
