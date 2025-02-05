@@ -1,0 +1,27 @@
+
+[
+    {
+      "id": 1,
+      "title": "Exclusive Listings",
+      "description": "Gain access to ultra-exclusive, off-market luxury properties that are not available anywhere else.",
+      "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
+    },
+    {
+      "id": 2,
+      "title": "Global Reach",
+      "description": "We offer luxury real estate opportunities in the world's most prestigious locations.",
+      "image": "https://images.unsplash.com/photo-1514910565482-164b6d64c84d"
+    },
+    {
+      "id": 3,
+      "title": "Personalized Service",
+      "description": "Our dedicated agents provide VIP client service, ensuring a seamless buying experience tailored to your needs.",
+      "image": "https://images.unsplash.com/photo-1599058917212-d4065d9a98a2"
+    },
+    {
+      "id": 4,
+      "title": "Secure Transactions",
+      "description": "Confidentiality and discretion are at the core of every high-end real estate transaction we facilitate.",
+      "image": "https://images.unsplash.com/photo-1603541763484-8eef17acf6fe"
+    }
+  ]
