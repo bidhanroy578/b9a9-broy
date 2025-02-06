@@ -2,10 +2,10 @@
 const Inquiry = () => {
     return (
         <div>
-            <h2 className="text-3xl font-semibold leading-20 text-center">Let&apos;s Find Your Dream Property Together</h2>
+            <h2 className="text-3xlz font-semibold leading-20 text-center">Let&apos;s Find Your Dream Property Together</h2>
 
             <div className="hero-content">
-                <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                <div className="card w-full bg-transparent max-w-sm shrink-0 shadow-2xl">
                     <form className="card-body">
                         <div className="form-control">
                             <label className="label">
