@@ -1,7 +1,7 @@
 import { Link, NavLink } from "react-router";
 
 const Nav = () => {
-    const sublinks = <ul className="bg-slate-50">
+    const sublinks = <ul className=" z-50">
         <li><NavLink>Buy</NavLink></li>
         <li><NavLink>Rent</NavLink></li>
         <li><NavLink>Just Sold</NavLink></li>
@@ -21,7 +21,7 @@ const Nav = () => {
     </>
     return (
         <>
-            <div className="navbar bg-white text-black shadow-sm">
+            <div className="navbar shadow-sm">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
