@@ -1,6 +1,7 @@
 import { GrFavorite } from "react-icons/gr";
 import { IoMdShare } from "react-icons/io";
 import { useLoaderData, useParams } from "react-router";
+import Inquiry from "../components/home/Inquiry";
 
 const Details = () => {
     const { id } = useParams()
@@ -28,24 +29,23 @@ const Details = () => {
                 <button className="absolute bottom-[10%] right-[10%] z-10 btn btn-lg rounded-full ">See More </button>
             </div>
 
-            <div>
-                <div>
+            <div className="grid grid-cols-3">
+                <div className="col-span-2">
                     <div>
                         <h3 className="text-2xl leading-5 font-medium">{title}</h3>
                         <h4 className="text-3xl leading-20 opacity-85 font-light">{price}</h4>
                         <p className="text-xl font-semibold leading-14">{bedrooms} Bedrooms . {bathrooms} Bathrooms . {size} </p>
-                        <p>Caregory : {category} . Location : {location}</p>
+                        <p className="text-lg ">Caregory : {category} . Location : {location}</p>
+                        <p className="text-lg mb-4">Type : {category} . Status : {status} </p>
                         <p>{description}</p>
                         <p><img src="" alt="" /></p>
                     </div>
                     <div>
                         <h3 className="text-2xl leading-16">Features</h3>
-                        <p className="text-lg ">{features.map(i => <div key={i}><span>{i}</span></div>)}</p>
+                        <p className="text-lg ">{features.map(i => <p className="leading-10" key={i}>🔵 {i}</p>)}</p>
                     </div>
                 </div>
-                <div>
-
-                </div>
+                <Inquiry></Inquiry>
             </div>
         </div>
     );
