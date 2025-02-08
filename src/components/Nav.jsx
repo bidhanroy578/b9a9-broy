@@ -16,7 +16,7 @@ const Nav = () => {
             </details>
         </li>
         <li><NavLink>About</NavLink></li>
-        <li><NavLink>Contact</NavLink></li>
+        <li><NavLink to={'#contact'}>Contact</NavLink></li>
         <li><NavLink>🔍 Search</NavLink></li>
     </>
     return (

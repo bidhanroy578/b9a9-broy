@@ -2,8 +2,8 @@ import { Outlet } from "react-router";
 import Slider from "../components/home/Slider";
 import Category from "../components/home/Category";
 import Featured from "../components/home/Featured";
-import Choose from "../components/home/Choose";
 import Inquiry from "../components/home/Inquiry";
+import Chooseslider from "../components/home/ChooseSlider";
 
 const Home = () => {
     return (
@@ -11,7 +11,7 @@ const Home = () => {
             <Slider></Slider>
             <Category></Category>
             <Featured></Featured>
-            <Choose></Choose>
+            <Chooseslider></Chooseslider>
             <Inquiry></Inquiry>
             <Outlet></Outlet>
         </>

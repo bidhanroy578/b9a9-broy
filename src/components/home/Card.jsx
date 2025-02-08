@@ -7,7 +7,7 @@ const Card = ({ list }) => {
     return (
         <Link to={`/detail/${id}`} className=" shadow-xl hover:scale-105 ease-in-out duration-300 :scale-95 ">
             <div style={{ backgroundImage: `url(${image})` }} className="rounded-md rounded-b-none p-2 bg-center bg-cover h-48 min-w-72">
-                <div className="flex backdrop-blur-xl shadow-lg justify-between items-center ">
+                <div className="flex backdrop-blur-xl hover:bg-white/20 shadow-lg justify-between items-center ">
                     <h3 className=" font-medium w-fit h-fit text-start p-1 ">{title}</h3>
                     <p>{status}</p>
                     <BiHeart className="text-xl" />

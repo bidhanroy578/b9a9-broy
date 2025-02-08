@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const Choose = () => {
+const Chooseslider = () => {
     const [choose, setChoose] = useState([])
     useEffect(() => {
         fetch('/choose.json')
@@ -31,4 +31,4 @@ const Choose = () => {
     );
 };
 
-export default Choose;
+export default Chooseslider;
