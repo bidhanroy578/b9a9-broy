@@ -2,21 +2,21 @@ import { Link, NavLink } from "react-router";
 
 const Nav = () => {
     const sublinks = <ul className=" z-50">
-        <li><NavLink>Buy</NavLink></li>
-        <li><NavLink>Rent</NavLink></li>
-        <li><NavLink>Just Sold</NavLink></li>
-        <li><NavLink>Latest Listings</NavLink></li>
+        <li><a href="/#featured">Buy</a></li>
+        <li><a href="/#featured">Rent</a></li>
+        <li><a href="/#featured">Just Sold</a></li>
+        <li><a href="/#featured">Latest Listings</a></li>
     </ul>
     const mainLinks = <>
-        <li><NavLink>Home</NavLink></li>
+        <li><NavLink to={'/'}>Home</NavLink></li>
         <li>
             <details>
                 <summary>Properties ▼</summary>
                 {sublinks}
             </details>
         </li>
-        <li><NavLink>About</NavLink></li>
-        <li><NavLink to={'#contact'}>Contact</NavLink></li>
+        <li><NavLink to={'/about'}>About</NavLink></li>
+        <li><NavLink to={'/contact'}>Contact</NavLink></li>
         <li><NavLink>🔍 Search</NavLink></li>
     </>
     return (

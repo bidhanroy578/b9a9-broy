@@ -1,5 +1,9 @@
 
 const Footer = () => {
+    const handleSubmit = e => {
+        e.preventDefault()
+        
+    }
     return (
         <>
             <footer className="footer sm:footer-horizontal bg-base-200 text-base-content p-10">
@@ -23,7 +27,7 @@ const Footer = () => {
                     <a className="link link-hover">Privacy policy</a>
                     <a className="link link-hover">Cookie policy</a>
                 </nav>
-                <form>
+                <form onSubmit={handleSubmit}>
                     <h6 className="footer-title">Newsletter</h6>
                     <fieldset className="w-80">
                         <label>Enter your email address</label>

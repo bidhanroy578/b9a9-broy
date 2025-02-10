@@ -1,7 +1,7 @@
 
 const Inquiry = () => {
     return (
-        <div>
+        <div id="contact">
             <h2 className="text-3xlz font-semibold leading-20 text-center">Let&apos;s Find Your Dream Property Together</h2>
 
             <div className="hero-content">
