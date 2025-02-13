@@ -11,7 +11,7 @@ const Chooseslider = () => {
         <div className='my-10'>
             <h2 className='text-3xl font-semibold text-center leading-20'>Experience Luxury Like Never Before</h2>
             <div className="flex justify-center">
-                <div className=" carousel carousel-vertical rounded-box w-[80vw] h-[60vh] shadow-2xl">
+                <div className="p-3 carousel carousel-vertical rounded-box w-[80vw] h-[60vh] shadow-2xl">
                     {
                         choose.map(i =>
                             <div key={i.id} className="my-2 grid grid-cols-2 gap-4 carousel-item h-full w-full">

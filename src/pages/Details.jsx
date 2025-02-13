@@ -42,7 +42,7 @@ const Details = () => {
                     </div>
                     <div>
                         <h3 className="text-2xl leading-16">Features</h3>
-                        <p className="text-lg ">{features.map(i => <p className="leading-10" key={i}>🔵 {i}</p>)}</p>
+                        <div className="text-lg ">{features.map(i => <p className="leading-10" key={i}>🔵 {i}</p>)}</div>
                     </div>
                 </div>
                 <Inquiry></Inquiry>

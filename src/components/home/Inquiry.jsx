@@ -33,7 +33,7 @@ const Inquiry = () => {
                                 <span className="label-text">Property interest : </span>
                             </label>
                             <select name="property" className="input input-bordered rounded-md ">
-                                <option value="" disabled selected>Select Property Type</option>
+                                <option defaultChecked >Select Property Type</option>
                                 <option value="penthouse">Penthouse</option>
                                 <option value="beachfront">Beachfront Villa</option>
                                 <option value="mansion">Mansion</option>
