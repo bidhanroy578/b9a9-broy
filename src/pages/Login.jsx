@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import map from '/map.svg'
 import { AuthContext } from '../context/Authcontext';
 import { Link, useLocation, useNavigate } from 'react-router';
+import { passValidate } from '../utils/__utils__';
 const Login = () => {
 
     const { login, loginWithGoogle, } = useContext(AuthContext)
@@ -22,7 +23,8 @@ const Login = () => {
         let email = form.get('email')
         let password = form.get('password')
         console.log(email, password)
-
+        if(password.length <6 ){return alert('password must be 6 characters long or more')}
+        if(!passValidate(password)){return alert('password must contain at least one number , uppercase and lowercase letter')}
         // login with email and password
         login(email, password)
             .then(data => {

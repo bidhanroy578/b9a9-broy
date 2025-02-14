@@ -4,6 +4,7 @@ import { AuthContext } from "../context/Authcontext";
 import { updateProfile } from "firebase/auth";
 import auth from "../utils/firebase/__config__";
 import map from '/map.svg'
+import { passValidate } from "../utils/__utils__";
 
 const SignUp = () => {
 
@@ -28,6 +29,10 @@ const SignUp = () => {
         let name = form.get('name')
         let password = form.get('password')
 
+        // check if password is valid or not 
+        if (password.length < 6) { return alert('password must be 6 characters long or more') }
+        if (!passValidate(password)) { return alert('password must contain at least one number , uppercase and lowercase letter') }
+        // create a new account with email and password
         signUp(email, password)
             .then(data => {
                 console.log(data.user)
@@ -50,11 +55,11 @@ const SignUp = () => {
                     <div className="card-body">
                         <form onSubmit={handleSubmit} name='login' className="fieldset">
                             <label className="fieldset-label">Name</label>
-                            <input name='name' type="text" className="input" placeholder="Name" required/>
+                            <input name='name' type="text" className="input" placeholder="Name" required />
                             <label className="fieldset-label">Email</label>
-                            <input name='email' type="email" className="input" placeholder="Email" required/>
+                            <input name='email' type="email" className="input" placeholder="Email" required />
                             <label className="fieldset-label">Password</label>
-                            <input name='password' type="password" className="input" placeholder="Password" required/>
+                            <input name='password' type="password" className="input" placeholder="Password" required />
                             <button className="btn btn-neutral mt-4">Sign Up</button>
                         </form>
                         <div className="divider">or</div>
