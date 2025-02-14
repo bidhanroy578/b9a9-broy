@@ -2,6 +2,7 @@ import { GrFavorite } from "react-icons/gr";
 import { IoMdShare } from "react-icons/io";
 import { useLoaderData, useParams } from "react-router";
 import Inquiry from "../components/home/Inquiry";
+import { Helmet } from "react-helmet";
 
 const Details = () => {
     const { id } = useParams()
@@ -47,6 +48,9 @@ const Details = () => {
                 </div>
                 <Inquiry></Inquiry>
             </div>
+            <Helmet>
+                <title>Details</title>
+            </Helmet>
         </div>
     );
 };

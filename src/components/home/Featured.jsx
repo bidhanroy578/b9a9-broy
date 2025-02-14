@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Card from "./Card";
+import { Helmet } from "react-helmet";
 
 const Featured = () => {
     const [list, setList] = useState([])
@@ -16,6 +17,9 @@ fetch('/featured.json')
                     list.map((i,id)=><Card key={id} list={i} ></Card>)
                 }
             </div>
+            <Helmet>
+                <title>Featured list</title>
+            </Helmet>
         </div>
     );
 };

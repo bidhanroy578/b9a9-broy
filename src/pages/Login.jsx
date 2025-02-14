@@ -3,6 +3,7 @@ import map from '/map.svg'
 import { AuthContext } from '../context/Authcontext';
 import { Link, useLocation, useNavigate } from 'react-router';
 import { passValidate } from '../utils/__utils__';
+import { Helmet } from 'react-helmet';
 const Login = () => {
 
     const { login, loginWithGoogle, } = useContext(AuthContext)
@@ -57,6 +58,9 @@ const Login = () => {
                     </div>
                 </div>
             </div>
+            <Helmet>
+                <title>Login</title>
+            </Helmet>
         </div>
     );
 };

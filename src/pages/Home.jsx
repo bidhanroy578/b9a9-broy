@@ -4,6 +4,7 @@ import Category from "../components/home/Category";
 import Featured from "../components/home/Featured";
 import Inquiry from "../components/home/Inquiry";
 import Chooseslider from "../components/home/ChooseSlider";
+import { Helmet } from "react-helmet";
 
 const Home = () => {
     return (
@@ -14,6 +15,9 @@ const Home = () => {
             <Chooseslider></Chooseslider>
             <Inquiry></Inquiry>
             <Outlet></Outlet>
+            <Helmet>
+                <title>Luxuty State</title>
+            </Helmet>
         </>
     );
 };

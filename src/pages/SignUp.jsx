@@ -5,6 +5,7 @@ import { updateProfile } from "firebase/auth";
 import auth from "../utils/firebase/__config__";
 import map from '/map.svg'
 import { passValidate } from "../utils/__utils__";
+import { Helmet } from "react-helmet";
 
 const SignUp = () => {
 
@@ -66,6 +67,9 @@ const SignUp = () => {
                     </div>
                 </div>
             </div>
+            <Helmet>
+                <title>SignUp</title>
+            </Helmet>
         </div>
     );
 };
