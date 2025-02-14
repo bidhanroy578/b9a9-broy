@@ -16,8 +16,7 @@ const SignUp = () => {
     // login with google gmail
     const handleGoogleLogin = () => {
         loginWithGoogle()
-            .then(data => {
-                console.log(data.user)
+            .then(() => {
                 navigate(location.state || '/')
             }).catch(err => alert(err.message))
     }
@@ -34,8 +33,7 @@ const SignUp = () => {
         if (!passValidate(password)) { return alert('password must contain at least one number , uppercase and lowercase letter') }
         // create a new account with email and password
         signUp(email, password)
-            .then(data => {
-                console.log(data.user)
+            .then(() => {
                 updateProfile(auth.currentUser, { displayName: name })
                     .then(alert('profile created'))
                     .catch(err => alert(err.message))

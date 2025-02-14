@@ -2,11 +2,11 @@
 const Slider = () => {
     return (
         <>
-            <div className="carousel min-h-[80vh] w-full">
+            <div className="carousel h-[80vh] w-full">
                 <div id="item1" className="carousel-item w-full">
                     <img
-                        src="https://img.daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.webp"
-                        className="w-full" />
+                        src="https://plus.unsplash.com/premium_photo-1661878863422-9657ff7407e5?q=80&w=1948&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        className="w-full object-cover object-center" />
                 </div>
                 <div id="item2" className="carousel-item w-full">
                     <img

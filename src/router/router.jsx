@@ -22,7 +22,9 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/category/:catg',
-                element: <Featured></Featured>
+                element: <PrivateRouter>
+                    <Featured></Featured>
+                </PrivateRouter>
             },
             {
                 path: '/detail/:id',
