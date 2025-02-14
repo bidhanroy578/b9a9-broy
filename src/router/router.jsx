@@ -6,6 +6,8 @@ import Details from "../pages/Details";
 import Featured from "../components/home/Featured";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
+import Login from "../pages/Login";
+import PrivateRouter from "./PrivateRouter";
 
 export const router = createBrowserRouter([
     {
@@ -19,20 +21,26 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/category/:catg',
-                element:<Featured></Featured>
+                element: <Featured></Featured>
             },
             {
                 path: '/detail/:id',
-                element: <Details></Details>,
+                element: <PrivateRouter>
+                    <Details></Details>
+                </PrivateRouter>,
                 loader: () => fetch('/featured.json')
-            } ,
+            },
             {
-                path:'/about' ,
+                path: '/about',
                 element: <About></About>
             },
             {
-                path: '/contact', 
+                path: '/contact',
                 element: <Contact></Contact>
+            },
+            {
+                path: '/login',
+                element: <Login></Login>
             }
         ]
     }

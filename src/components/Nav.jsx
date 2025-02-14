@@ -1,6 +1,18 @@
+import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router";
+import { AuthContext } from "../context/Authcontext";
+import { CgProfile } from "react-icons/cg";
 
 const Nav = () => {
+    const { user, loading , logout } = useContext(AuthContext)
+    const [shown , setShown] = useState(false)
+
+    const handleLogout = () => {
+        logout()
+        .then(alert('logged out successfull'))
+        .catch(err => alert(err.message))
+    }
+
     const sublinks = <ul className=" z-50">
         <li><a href="/#featured">Buy</a></li>
         <li><a href="/#featured">Rent</a></li>
@@ -19,6 +31,7 @@ const Nav = () => {
         <li><NavLink to={'/contact'}>Contact</NavLink></li>
         <li><NavLink>🔍 Search</NavLink></li>
     </>
+    if (loading) { return <div className="h-[12vh]"></div> }
     return (
         <>
             <div className="navbar shadow-sm">
@@ -39,7 +52,19 @@ const Nav = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Sign In</a>
+                    {
+                        user ?
+                            <div>
+                                <CgProfile onClick={()=>setShown(!shown) } className="text-2xl hover:scale-105 active:scale-95 transition relative"></CgProfile>
+                                <div className={`${shown ? '' : 'hidden'} absolute top-14 right-0 p-5 space-y-3 z-50 text-end backdrop-blur-xs rounded-md shadow-2xl`} >
+                                    <p>{user.displayName || 'Mr.'}</p>
+                                    <p>{user.email || 'example@email.com'}</p>
+                                    <button onClick={handleLogout} className="btn btn-md">Log Out</button>
+                                </div>
+                            </div>
+                            :
+                            <Link to={'/login'} className="btn">Log In</Link>
+                    }
                 </div>
             </div>
         </>

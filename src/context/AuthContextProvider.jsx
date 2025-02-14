@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { AuthContext } from './Authcontext';
 import PropTypes from 'prop-types';
-import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import auth from '../utils/firebase/__config__';
 
 const AuthContextProvider = ({ children }) => {
@@ -21,6 +21,10 @@ const AuthContextProvider = ({ children }) => {
     const login = (email, pass) => {
         return signInWithEmailAndPassword(auth, email, pass)
     }
+    // logout 
+    const logout = () => {
+        return signOut(auth)
+    }
     // observer here to check if user is logged in or not
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
@@ -30,7 +34,7 @@ const AuthContextProvider = ({ children }) => {
         return () => unsubscribe()
     }, [])
 
-    const data = { user, loading, signUp, login, loginWithGoogle,  }
+    const data = { user, loading, signUp, login, loginWithGoogle, logout, }
     return (
         <AuthContext.Provider value={data}>
             {children}
