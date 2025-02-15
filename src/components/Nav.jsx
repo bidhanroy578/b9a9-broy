@@ -2,15 +2,16 @@ import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router";
 import { AuthContext } from "../context/Authcontext";
 import { CgProfile } from "react-icons/cg";
+import { Tooltip } from 'react-tooltip'
 
 const Nav = () => {
-    const { user, loading , logout } = useContext(AuthContext)
-    const [shown , setShown] = useState(false)
+    const { user, loading, logout } = useContext(AuthContext)
+    const [shown, setShown] = useState(false)
 
     const handleLogout = () => {
         logout()
-        .then(alert('logged out successfull'))
-        .catch(err => alert(err.message))
+            .then(alert('logged out successfull'))
+            .catch(err => alert(err.message))
     }
 
     const sublinks = <ul className=" z-50">
@@ -55,10 +56,22 @@ const Nav = () => {
                     {
                         user ?
                             <div>
-                                <CgProfile onClick={()=>setShown(!shown) } className="active text-2xl hover:scale-105 active:scale-95 transition relative"></CgProfile>
-                                <div className={`${shown ? '' : 'hidden'} absolute top-14 right-0 p-5 space-y-3 z-50 text-end backdrop-blur-xs rounded-md shadow-2xl`} >
+                                <div id="profile-hover">
+                                    {
+                                        user?.photoURL ?
+                                            <div onClick={() => setShown(!shown)} className="active text-2xl hover:scale-105 active:scale-95 rounded-full transition relative overflow-hidden"><img src={user.photoURL} className="object-cover h-10 w-10" /></div>
+                                            :
+                                            <CgProfile onClick={() => setShown(!shown)} className="active text-2xl hover:scale-105 active:scale-95 rounded-full transition relative"></CgProfile>
+                                    }
+                                    <Tooltip
+                                    anchorSelect="#profile-hover"
+                                    content={user?.displayName || 'Hello Mr.'}
+                                    />
+                                </div>
+                                <div className={`${shown ? '' : 'hidden'} absolute top-14 right-0 p-5 space-y-3 z-50 text-end text-white bg-black/50 rounded-md shadow-2xl`} >
                                     <p>{user.displayName || 'Mr.'}</p>
                                     <p>{user.email || 'example@email.com'}</p>
+                                    <Link to={'/update-profile'} className="btn btn-md block">Update Profile</Link>
                                     <button onClick={handleLogout} className="btn btn-md">Log Out</button>
                                 </div>
                             </div>

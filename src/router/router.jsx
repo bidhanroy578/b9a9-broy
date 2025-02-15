@@ -9,6 +9,7 @@ import Contact from "../pages/Contact";
 import Login from "../pages/Login";
 import PrivateRouter from "./PrivateRouter";
 import SignUp from "../pages/SignUp";
+import UpdateProfile from "../pages/UpdateProfile";
 
 export const router = createBrowserRouter([
     {
@@ -48,6 +49,12 @@ export const router = createBrowserRouter([
             {
                 path: '/signup',
                 element: <SignUp></SignUp>
+            },
+            {
+                path: '/update-profile',
+                element: <PrivateRouter>
+                    <UpdateProfile></UpdateProfile>
+                </PrivateRouter>
             }
         ]
     }
