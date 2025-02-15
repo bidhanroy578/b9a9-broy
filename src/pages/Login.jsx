@@ -9,6 +9,8 @@ const Login = () => {
     const { login, loginWithGoogle, loginWithGithub } = useContext(AuthContext)
     let navigate = useNavigate()
     const location = useLocation()
+
+    // login with github 
     const handleGithubLogin = () => {
         loginWithGithub()
             .then(data => {

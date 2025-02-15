@@ -10,10 +10,18 @@ import { Helmet } from "react-helmet";
 const SignUp = () => {
 
 
-    const { loginWithGoogle, signUp } = useContext(AuthContext)
+    const { loginWithGithub, loginWithGoogle, signUp } = useContext(AuthContext)
     let navigate = useNavigate()
     const location = useLocation()
 
+    // login with github
+    const handleGithubLogin = () => {
+        loginWithGithub()
+            .then(data => {
+                console.log(data.user)
+                navigate(location.state || '/')
+            }).catch(err => alert(err.message))
+    }
     // login with google gmail
     const handleGoogleLogin = () => {
         loginWithGoogle()
@@ -63,6 +71,7 @@ const SignUp = () => {
                         </form>
                         <div className="divider">or</div>
                         <button onClick={handleGoogleLogin} className='btn btn-md p-2 rounded-sm'>Login with Google</button>
+                        <button onClick={handleGithubLogin} className='btn btn-md p-2 rounded-sm'>Login with Github</button>
                         <p>Already have an account ? <Link to={'/login'} className='text-yellow-400 link link-hover'>Please Login</Link></p>
                     </div>
                 </div>
