@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../context/Authcontext";
 import { updateProfile } from "firebase/auth";
@@ -6,6 +6,7 @@ import auth from "../utils/firebase/__config__";
 import map from '/map.svg'
 import { passValidate } from "../utils/__utils__";
 import { Helmet } from "react-helmet";
+import { BsEyeFill } from "react-icons/bs";
 
 const SignUp = () => {
 
@@ -13,6 +14,7 @@ const SignUp = () => {
     const { loginWithGithub, loginWithGoogle, signUp } = useContext(AuthContext)
     let navigate = useNavigate()
     const location = useLocation()
+    const [show , setShow] = useState(false)
 
     // login with github
     const handleGithubLogin = () => {
@@ -66,7 +68,10 @@ const SignUp = () => {
                             <label className="fieldset-label">Email</label>
                             <input name='email' type="email" className="input" placeholder="Email" required />
                             <label className="fieldset-label">Password</label>
-                            <input name='password' type="password" className="input" placeholder="Password" required />
+                            <span className="relative ">
+                                <input name='password' type={show ? "text" : "password"} className="input pr-8" placeholder="Password" />
+                                <BsEyeFill onClick={() => setShow(!show)} className="absolute text-lg top-1/4 right-2"></BsEyeFill>
+                            </span>
                             <button className="btn btn-neutral mt-4">Sign Up</button>
                         </form>
                         <div className="divider">or</div>

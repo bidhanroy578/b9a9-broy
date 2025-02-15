@@ -1,14 +1,16 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import map from '/map.svg'
 import { AuthContext } from '../context/Authcontext';
 import { Link, useLocation, useNavigate } from 'react-router';
 import { passValidate } from '../utils/__utils__';
 import { Helmet } from 'react-helmet';
+import { BsEyeFill } from 'react-icons/bs';
 const Login = () => {
 
     const { login, loginWithGoogle, loginWithGithub } = useContext(AuthContext)
     let navigate = useNavigate()
     const location = useLocation()
+    const [show ,setShow] = useState(false)
 
     // login with github 
     const handleGithubLogin = () => {
@@ -56,7 +58,10 @@ const Login = () => {
                             <label className="fieldset-label">Email</label>
                             <input name='email' type="email" className="input" placeholder="Email" required />
                             <label className="fieldset-label">Password</label>
-                            <input name='password' type="password" className="input" placeholder="Password" required />
+                            <span className="relative ">
+                                <input name='password' type={show ? "text" : "password"} className="input pr-8" placeholder="Password" />
+                                <BsEyeFill onClick={() => setShow(!show)} className="absolute text-lg top-1/4 right-2"></BsEyeFill>
+                            </span>
                             <div><a className="link link-hover">Forgot password?</a></div>
                             <button className="btn btn-neutral mt-4">Login</button>
                         </form>
