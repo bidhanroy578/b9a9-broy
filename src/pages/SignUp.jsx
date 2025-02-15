@@ -43,7 +43,7 @@ const SignUp = () => {
     }
     return (
         <div className='hero min-h-[90vh] bg-cover bg-center' style={{ backgroundImage: `url(${map})` }}>
-            <div className="hero-content flex-col lg:flex-row-reverse">
+            <div className="hero-content flex-col lg:flex-row">
                 <div className="text-center bg-white/50 shadow-2xl rounded-md p-4 lg:text-left">
                     <h1 className="text-5xl font-bold">Sign Up to Explore Exclusive Properties</h1>
                     <p className="py-6">

@@ -37,7 +37,7 @@ const Login = () => {
         <div className='hero min-h-[90vh] bg-cover bg-center' style={{ backgroundImage: `url(${map})` }}>
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="text-center bg-white/50 shadow-2xl rounded-md p-4 lg:text-left">
-                    <h1 className="text-5xl font-bold">Sign in to Explore Exclusive Properties</h1>
+                    <h1 className="text-5xl font-bold">Login to Explore Exclusive Properties</h1>
                     <p className="py-6">
                         Discover homes as unique as you are. Log in to access personalized recommendations, VIP property tours, and priority listings curated just for you. Luxury living starts here.
                     </p>

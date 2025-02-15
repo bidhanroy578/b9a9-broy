@@ -23,13 +23,13 @@ const Nav = () => {
         <li><NavLink to={'/'}>Home</NavLink></li>
         <li>
             <details>
-                <summary>Properties ▼</summary>
+                <summary>Properties </summary>
                 {sublinks}
             </details>
         </li>
         <li><NavLink to={'/about'}>About</NavLink></li>
         <li><NavLink to={'/contact'}>Contact</NavLink></li>
-        <li><NavLink>🔍 Search</NavLink></li>
+        <li><a>🔍 Search</a></li>
     </>
     if (loading) { return <div className="h-[12vh]"></div> }
     return (
@@ -55,7 +55,7 @@ const Nav = () => {
                     {
                         user ?
                             <div>
-                                <CgProfile onClick={()=>setShown(!shown) } className="text-2xl hover:scale-105 active:scale-95 transition relative"></CgProfile>
+                                <CgProfile onClick={()=>setShown(!shown) } className="active text-2xl hover:scale-105 active:scale-95 transition relative"></CgProfile>
                                 <div className={`${shown ? '' : 'hidden'} absolute top-14 right-0 p-5 space-y-3 z-50 text-end backdrop-blur-xs rounded-md shadow-2xl`} >
                                     <p>{user.displayName || 'Mr.'}</p>
                                     <p>{user.email || 'example@email.com'}</p>
@@ -63,7 +63,7 @@ const Nav = () => {
                                 </div>
                             </div>
                             :
-                            <Link to={'/login'} className="btn">Log In</Link>
+                            <NavLink to={'/login'} className="btn">Log In</NavLink>
                     }
                 </div>
             </div>
