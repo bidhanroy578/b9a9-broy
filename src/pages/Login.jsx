@@ -6,10 +6,16 @@ import { passValidate } from '../utils/__utils__';
 import { Helmet } from 'react-helmet';
 const Login = () => {
 
-    const { login, loginWithGoogle, } = useContext(AuthContext)
+    const { login, loginWithGoogle, loginWithGithub } = useContext(AuthContext)
     let navigate = useNavigate()
     const location = useLocation()
-
+    const handleGithubLogin = () => {
+        loginWithGithub()
+            .then(data => {
+                console.log(data.user)
+                navigate(location.state || '/')
+            }).catch(err => alert(err.message))
+    }
     const handleGoogleLogin = () => {
         loginWithGoogle()
             .then(data => {
@@ -24,13 +30,13 @@ const Login = () => {
         let email = form.get('email')
         let password = form.get('password')
         console.log(email, password)
-        if(password.length <6 ){return alert('password must be 6 characters long or more')}
-        if(!passValidate(password)){return alert('password must contain at least one number , uppercase and lowercase letter')}
+        if (password.length < 6) { return alert('password must be 6 characters long or more') }
+        if (!passValidate(password)) { return alert('password must contain at least one number , uppercase and lowercase letter') }
         // login with email and password
         login(email, password)
             .then(data => {
+                console.log(data.user)
                 navigate(location.state || '/')
-                console.log(data)
             }).catch(err => alert(err.message))
     }
     return (
@@ -46,14 +52,15 @@ const Login = () => {
                     <div className="card-body">
                         <form onSubmit={handleSubmit} name='login' className="fieldset">
                             <label className="fieldset-label">Email</label>
-                            <input name='email' type="email" className="input" placeholder="Email" required/>
+                            <input name='email' type="email" className="input" placeholder="Email" required />
                             <label className="fieldset-label">Password</label>
-                            <input name='password' type="password" className="input" placeholder="Password" required/>
+                            <input name='password' type="password" className="input" placeholder="Password" required />
                             <div><a className="link link-hover">Forgot password?</a></div>
                             <button className="btn btn-neutral mt-4">Login</button>
                         </form>
                         <div className="divider">or</div>
                         <button onClick={handleGoogleLogin} className='btn btn-md p-2 rounded-sm'>Login with Google</button>
+                        <button onClick={handleGithubLogin} className='btn btn-md p-2 rounded-sm'>Login with Github</button>
                         <p>New here ? <Link to={'/signup'} className='text-yellow-400 link link-hover'>Please Sign Up</Link></p>
                     </div>
                 </div>

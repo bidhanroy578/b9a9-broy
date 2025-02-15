@@ -59,7 +59,7 @@ const Nav = () => {
                                 <div id="profile-hover">
                                     {
                                         user?.photoURL ?
-                                            <div onClick={() => setShown(!shown)} className="active text-2xl hover:scale-105 active:scale-95 rounded-full transition relative overflow-hidden"><img src={user.photoURL} className="object-cover h-10 w-10" /></div>
+                                            <div onClick={() => setShown(!shown)} className="cursor-pointer active text-2xl hover:scale-105 active:scale-95 rounded-full transition relative overflow-hidden"><img src={user.photoURL} className="object-cover h-10 w-10" /></div>
                                             :
                                             <CgProfile onClick={() => setShown(!shown)} className="active text-2xl hover:scale-105 active:scale-95 rounded-full transition relative"></CgProfile>
                                     }
@@ -69,9 +69,9 @@ const Nav = () => {
                                     />
                                 </div>
                                 <div className={`${shown ? '' : 'hidden'} absolute top-14 right-0 p-5 space-y-3 z-50 text-end text-white bg-black/50 rounded-md shadow-2xl`} >
-                                    <p>{user.displayName || 'Mr.'}</p>
-                                    <p>{user.email || 'example@email.com'}</p>
-                                    <Link to={'/update-profile'} className="btn btn-md block">Update Profile</Link>
+                                    <p>{user.displayName || 'Name not found'}</p>
+                                    <p>{user.email || 'Email not found'}</p>
+                                    <Link to={'/update-profile'} className="btn btn-md flex">Update Profile</Link>
                                     <button onClick={handleLogout} className="btn btn-md">Log Out</button>
                                 </div>
                             </div>
