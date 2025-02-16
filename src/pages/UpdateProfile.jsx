@@ -5,6 +5,7 @@ import { BsEyeFill } from "react-icons/bs";
 import { sendEmailVerification, updateEmail, updatePassword, updateProfile } from "firebase/auth";
 import auth from "../utils/firebase/__config__";
 import { passValidate } from "../utils/__utils__";
+import { Helmet } from "react-helmet";
 
 
 const UpdateProfile = () => {
@@ -65,7 +66,7 @@ const UpdateProfile = () => {
             <div className="max-w-xs m-auto my-4">
                 <p>Full Name : {user?.displayName || 'Not Found'}</p>
                 <p>Email : {user?.email || 'Not Found'}</p>
-                <p>Photo URL : {user?.photoURL || 'Not Found'}</p>
+                <p className="text-ellipsis whitespace-nowrap cursor-pointer hover:whitespace-normal max-w-xs overflow-hidden">Photo URL : <span>{user?.photoURL || 'Not Found'}</span></p>
                 <p>Email Verified Status : {user?.emailVerified ? 'Verified' : 'Not Verified'} {user.emailVerified || <span onClick={emailVerification} className="link link-hover text-red-600">Verify Email</span>}</p>
             </div>
             <form onSubmit={handleSubmit} name='login' className="fieldset max-w-xs mx-auto">
@@ -82,6 +83,9 @@ const UpdateProfile = () => {
                 <input name='photoURL' type="text" className="input" placeholder="Photo URL" />
                 <button className="btn btn-neutral mt-4">Update Profile</button>
             </form>
+            <Helmet>
+                <title>Update Profile</title>
+            </Helmet>
         </div>
     );
 };
