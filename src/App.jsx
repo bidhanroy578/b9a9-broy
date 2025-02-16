@@ -5,7 +5,7 @@ import Footer from './components/Footer'
 function App() {
 
   return (
-    <div className='max-w-[1440px] mx-auto lg:px-10 pt-2'>
+    <div className='max-w-[1440px] mx-auto lg:px-10 pt-2 font-nunito'>
       <Nav></Nav>
       <Outlet></Outlet>
       <Footer></Footer>
