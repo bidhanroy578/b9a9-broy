@@ -14,8 +14,8 @@ const Chooseslider = () => {
                 <div className="py-3 carousel carousel-vertical rounded-box w-[80vw] h-[70vh] shadow-2xl">
                     {
                         choose.map(i =>
-                            <div className="my-2 flex flex-col md:flex-row gap-2 carousel-item h-full w-full" key={i.id}>
-                                <div className="h-full flex-1 border border-red-400 text-center content-center w-full bg-slate-200 rounded-2xl overflow-hidden">
+                            <div className="my-1 flex flex-col md:flex-row gap-2 carousel-item h-full w-full" key={i.id}>
+                                <div className="h-full flex-1 text-center content-center w-full bg-slate-200 rounded-lg overflow-hidden">
                                     <div style={{ backgroundImage: `url(${i.image})` }} className="bg-cover bg-center h-full w-full"></div>
                                 </div>
                                 <div className="text-center flex-1 content-center px-5">

@@ -63,7 +63,7 @@ const Login = () => {
                                 <BsEyeFill onClick={() => setShow(!show)} className="absolute text-lg top-1/4 right-2"></BsEyeFill>
                             </span>
                             <div><a className="link link-hover">Forgot password?</a></div>
-                            <button className="btn btn-neutral mt-4">Login</button>
+                            <button className="btn btn-md mt-4">Login</button>
                         </form>
                         <div className="divider">or</div>
                         <button onClick={handleGoogleLogin} className='btn btn-md p-2 rounded-sm'>Login with Google</button>
