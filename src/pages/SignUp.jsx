@@ -7,6 +7,7 @@ import map from '/map.svg'
 import { passValidate } from "../utils/__utils__";
 import { Helmet } from "react-helmet";
 import { BsEyeFill } from "react-icons/bs";
+import { errorToast } from "../utils/toast";
 
 const SignUp = () => {
 
@@ -19,17 +20,16 @@ const SignUp = () => {
     // login with github
     const handleGithubLogin = () => {
         loginWithGithub()
-            .then(data => {
-                console.log(data.user)
+            .then(() => {
                 navigate(location.state || '/')
-            }).catch(err => alert(err.message))
+            }).catch(err => errorToast(err.message))
     }
     // login with google gmail
     const handleGoogleLogin = () => {
         loginWithGoogle()
             .then(() => {
                 navigate(location.state || '/')
-            }).catch(err => alert(err.message))
+            }).catch(err => errorToast(err.message))
     }
 
     const handleSubmit = e => {
@@ -40,16 +40,16 @@ const SignUp = () => {
         let password = form.get('password')
 
         // check if password is valid or not 
-        if (password.length < 6) { return alert('password must be 6 characters long or more') }
-        if (!passValidate(password)) { return alert('password must contain at least one number , uppercase and lowercase letter') }
+        if (password.length < 6) { return errorToast('password must be 6 characters long or more') }
+        if (!passValidate(password)) { return errorToast('password must contain at least one number , uppercase and lowercase letter') }
         // create a new account with email and password
         signUp(email, password)
             .then(() => {
                 updateProfile(auth.currentUser, { displayName: name })
                     .then(alert('profile created'))
-                    .catch(err => alert(err.message))
+                    .catch(err => errorToast(err.message))
                 navigate(location.state || '/')
-            }).catch(err => alert(err.message))
+            }).catch(err => errorToast(err.message))
     }
     return (
         <div className='hero min-h-[90vh] bg-cover bg-center' style={{ backgroundImage: `url(${map})` }}>

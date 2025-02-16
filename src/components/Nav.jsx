@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router";
 import { AuthContext } from "../context/Authcontext";
 import { CgProfile } from "react-icons/cg";
 import { Tooltip } from 'react-tooltip'
+import { errorToast } from "../utils/toast";
 
 const Nav = () => {
     const { user, loading, logout } = useContext(AuthContext)
@@ -11,7 +12,7 @@ const Nav = () => {
     const handleLogout = () => {
         logout()
             .then(alert('logged out successfull'))
-            .catch(err => alert(err.message))
+            .catch(err => errorToast(err.message))
     }
 
     const sublinks = <ul className=" z-50">

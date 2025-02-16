@@ -5,27 +5,25 @@ import { Link, useLocation, useNavigate } from 'react-router';
 import { passValidate } from '../utils/__utils__';
 import { Helmet } from 'react-helmet';
 import { BsEyeFill } from 'react-icons/bs';
+import { errorToast } from '../utils/toast';
 const Login = () => {
 
     const { login, loginWithGoogle, loginWithGithub } = useContext(AuthContext)
     let navigate = useNavigate()
     const location = useLocation()
-    const [show ,setShow] = useState(false)
+    const [show, setShow] = useState(false)
 
     // login with github 
     const handleGithubLogin = () => {
         loginWithGithub()
-            .then(data => {
-                console.log(data.user)
-                navigate(location.state || '/')
-            }).catch(err => alert(err.message))
+            .then(navigate(location.state || '/'))
+            .catch(err => errorToast(err.message))
     }
     const handleGoogleLogin = () => {
         loginWithGoogle()
-            .then(data => {
-                console.log(data.user)
+            .then(() => {
                 navigate(location.state || '/')
-            }).catch(err => alert(err.message))
+            }).catch(err => errorToast(err.message))
     }
 
     const handleSubmit = e => {
@@ -33,15 +31,13 @@ const Login = () => {
         const form = new FormData(e.currentTarget)
         let email = form.get('email')
         let password = form.get('password')
-        console.log(email, password)
-        if (password.length < 6) { return alert('password must be 6 characters long or more') }
-        if (!passValidate(password)) { return alert('password must contain at least one number , uppercase and lowercase letter') }
+        if (password.length < 6) { return errorToast('password must be 6 characters long or more') }
+        if (!passValidate(password)) { return errorToast('password must contain at least one number , uppercase and lowercase letter') }
         // login with email and password
         login(email, password)
-            .then(data => {
-                console.log(data.user)
+            .then(() => {
                 navigate(location.state || '/')
-            }).catch(err => alert(err.message))
+            }).catch(err => errorToast(err.message))
     }
     return (
         <div className='hero min-h-[90vh] bg-cover bg-center' style={{ backgroundImage: `url(${map})` }}>
