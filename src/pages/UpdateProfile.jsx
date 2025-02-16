@@ -45,8 +45,10 @@ const UpdateProfile = () => {
                 .then(successToast('Password updated'), e.target.reset())
                 .catch(err => errorToast(err.message))
         }
-        if (!passValidate(password)) {
-            errorToast('Password must contain at least one small,capital,number charecter ')
+        if (password) {
+            if (!passValidate(password)) {
+                errorToast('Password must contain at least one small,capital,number charecter ')
+            }
         }
         if (photoURL) {
             updateProfile(usr, { photoURL: photoURL })
