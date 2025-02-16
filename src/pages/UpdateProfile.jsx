@@ -6,18 +6,20 @@ import { sendEmailVerification, updateEmail, updatePassword, updateProfile } fro
 import auth from "../utils/firebase/__config__";
 import { passValidate } from "../utils/__utils__";
 import { Helmet } from "react-helmet";
+import { ToastContainer } from "react-toastify";
+import { errorToast, successToast } from "../utils/toast";
 
 
 const UpdateProfile = () => {
 
     const [show, setShow] = useState(false)
-    const { user , } = useContext(AuthContext)
+    const { user, } = useContext(AuthContext)
     const usr = auth.currentUser
 
     function emailVerification() {
         sendEmailVerification(usr)
-        .then(alert('Verification email sent successfully . Please check your email'))
-        .catch(err => alert(err.message))
+            .then(successToast('Verification email sent successfully . Please check your email'))
+            .catch(err => errorToast(err.message))
     }
     function handleSubmit(e) {
         e.preventDefault()
@@ -30,23 +32,26 @@ const UpdateProfile = () => {
         // update user profile
         if (name) {
             updateProfile(usr, { displayName: name })
-                .then(alert('Name updated'))
-                .catch(err => alert(err.message))
+                .then(successToast('Name updated'), e.target.reset())
+                .catch(err => errorToast(err.message))
         }
         if (email) {
             updateEmail(usr, email)
-                .then(alert('Email updated'))
-                .catch(err => alert(err.message))
+                .then(successToast('Email updated'), e.target.reset())
+                .catch(err => errorToast(err.message))
         }
-        if(passValidate(password)) {
+        if (passValidate(password)) {
             updatePassword(usr, password)
-            .then(alert('Password updated'))
-            .catch(err => alert(err.message))
+                .then(successToast('Password updated'), e.target.reset())
+                .catch(err => errorToast(err.message))
         }
-        if(photoURL) {
-            updateProfile(usr , { photoURL: photoURL })
-            .then(alert('Photo URL updated'))
-            .catch(err => alert(err.message))
+        if (!passValidate(password)) {
+            errorToast('Password must contain at least one small,capital,number charecter ')
+        }
+        if (photoURL) {
+            updateProfile(usr, { photoURL: photoURL })
+                .then(successToast('Photo URL updated'), e.target.reset())
+                .catch(err => errorToast(err.message))
         }
 
     }
@@ -86,6 +91,7 @@ const UpdateProfile = () => {
             <Helmet>
                 <title>Update Profile</title>
             </Helmet>
+            <ToastContainer />
         </div>
     );
 };
