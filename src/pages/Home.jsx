@@ -16,7 +16,7 @@ const Home = () => {
             <Inquiry></Inquiry>
             <Outlet></Outlet>
             <Helmet>
-                <title>Luxuty State</title>
+                <title>Luxury State</title>
             </Helmet>
         </>
     );
