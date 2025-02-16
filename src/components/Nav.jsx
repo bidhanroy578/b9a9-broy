@@ -55,17 +55,18 @@ const Nav = () => {
                 <div className="navbar-end">
                     {
                         user ?
-                            <div>
+                            <div className="relative">
                                 <div id="profile-hover">
                                     {
                                         user?.photoURL ?
-                                            <div onClick={() => setShown(!shown)} className="cursor-pointer active text-2xl hover:scale-105 active:scale-95 rounded-full transition relative overflow-hidden"><img src={user.photoURL} className="object-cover h-10 w-10" /></div>
+                                            <div onClick={() => setShown(!shown)} className="cursor-pointer active text-2xl hover:scale-105 active:scale-95 rounded-full transition overflow-hidden"><img src={user.photoURL} className="object-cover h-10 w-10" /></div>
                                             :
-                                            <CgProfile onClick={() => setShown(!shown)} className="active text-2xl hover:scale-105 active:scale-95 rounded-full transition relative"></CgProfile>
+                                            <CgProfile onClick={() => setShown(!shown)} className="active text-2xl hover:scale-105 active:scale-95 rounded-full transition"></CgProfile>
                                     }
                                     <Tooltip
-                                    anchorSelect="#profile-hover"
-                                    content={user?.displayName || 'Hello Mr.'}
+                                        anchorSelect="#profile-hover"
+                                        place="left"
+                                        content={user?.displayName || 'Hello Mr.'}
                                     />
                                 </div>
                                 <div className={`${shown ? '' : 'hidden'} absolute top-14 right-0 p-5 space-y-3 z-50 text-end text-white bg-black/50 rounded-md shadow-2xl`} >
