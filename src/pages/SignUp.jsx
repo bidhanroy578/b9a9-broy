@@ -17,14 +17,12 @@ const SignUp = () => {
     const location = useLocation()
     const [show , setShow] = useState(false)
 
-    // login with github
     const handleGithubLogin = () => {
         loginWithGithub()
             .then(() => {
                 navigate(location.state || '/')
             }).catch(err => errorToast(err.message))
     }
-    // login with google gmail
     const handleGoogleLogin = () => {
         loginWithGoogle()
             .then(() => {
@@ -38,11 +36,8 @@ const SignUp = () => {
         let email = form.get('email')
         let name = form.get('name')
         let password = form.get('password')
-
-        // check if password is valid or not 
         if (password.length < 6) { return errorToast('password must be 6 characters long or more') }
         if (!passValidate(password)) { return errorToast('password must contain at least one number , uppercase and lowercase letter') }
-        // create a new account with email and password
         signUp(email, password)
             .then(() => {
                 updateProfile(auth.currentUser, { displayName: name })

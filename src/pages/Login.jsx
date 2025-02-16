@@ -13,7 +13,6 @@ const Login = () => {
     const location = useLocation()
     const [show, setShow] = useState(false)
 
-    // login with github 
     const handleGithubLogin = () => {
         loginWithGithub()
             .then(navigate(location.state || '/'))
@@ -33,7 +32,6 @@ const Login = () => {
         let password = form.get('password')
         if (password.length < 6) { return errorToast('password must be 6 characters long or more') }
         if (!passValidate(password)) { return errorToast('password must contain at least one number , uppercase and lowercase letter') }
-        // login with email and password
         login(email, password)
             .then(() => {
                 navigate(location.state || '/')

@@ -28,7 +28,6 @@ const UpdateProfile = () => {
         const email = form.get('email')
         const password = form.get('password')
         const photoURL = form.get('photoURL')
-        // update user profile
         if (name) {
             updateProfile(usr, { displayName: name })
                 .then(successToast('Name updated'), e.target.reset())

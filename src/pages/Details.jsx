@@ -7,7 +7,6 @@ import { Helmet } from "react-helmet";
 const Details = () => {
     const { id } = useParams()
     const data = useLoaderData()
-    // let d = data . find (i => i.id ==id)
     const { title, description, image, category, location,
         price, size, bedrooms, bathrooms, status, features } = data.find(i => i.id == id)
 
