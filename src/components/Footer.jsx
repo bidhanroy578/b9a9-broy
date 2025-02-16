@@ -29,7 +29,7 @@ const Footer = () => {
                 </nav>
                 <form onSubmit={handleSubmit}>
                     <h6 className="footer-title">Newsletter</h6>
-                    <fieldset className="w-80">
+                    <fieldset className="max-w-80">
                         <label>Enter your email address</label>
                         <div className="join">
                             <input
