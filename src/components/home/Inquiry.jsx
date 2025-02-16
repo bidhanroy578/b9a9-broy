@@ -2,7 +2,7 @@
 const Inquiry = () => {
     return (
         <div id="contact">
-            <h2 className="text-3xlz font-semibold leading-20 text-center">Let&apos;s Find Your Dream Property Together</h2>
+            <h2 className="text-3xl font-semibold mt-16 text-center">Let&apos;s Find Your Dream Property Together</h2>
 
             <div className="hero-content">
                 <div className="card w-full bg-transparent max-w-sm shrink-0 shadow-2xl">
