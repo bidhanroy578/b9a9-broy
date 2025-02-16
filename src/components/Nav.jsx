@@ -4,6 +4,7 @@ import { AuthContext } from "../context/Authcontext";
 import { CgProfile } from "react-icons/cg";
 import { Tooltip } from 'react-tooltip'
 import { errorToast } from "../utils/toast";
+import { ToastContainer } from "react-toastify";
 
 const Nav = () => {
     const { user, loading, logout } = useContext(AuthContext)
@@ -82,6 +83,7 @@ const Nav = () => {
                     }
                 </div>
             </div>
+            <ToastContainer />
         </>
     );
 };

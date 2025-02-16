@@ -6,6 +6,7 @@ import { passValidate } from '../utils/__utils__';
 import { Helmet } from 'react-helmet';
 import { BsEyeFill } from 'react-icons/bs';
 import { errorToast } from '../utils/toast';
+import { ToastContainer } from 'react-toastify';
 const Login = () => {
 
     const { login, loginWithGoogle, loginWithGithub } = useContext(AuthContext)
@@ -69,6 +70,7 @@ const Login = () => {
             <Helmet>
                 <title>Login</title>
             </Helmet>
+            <ToastContainer />
         </div>
     );
 };

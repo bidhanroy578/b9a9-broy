@@ -8,6 +8,7 @@ import { passValidate } from "../utils/__utils__";
 import { Helmet } from "react-helmet";
 import { BsEyeFill } from "react-icons/bs";
 import { errorToast } from "../utils/toast";
+import { ToastContainer } from "react-toastify";
 
 const SignUp = () => {
 
@@ -79,6 +80,7 @@ const SignUp = () => {
             <Helmet>
                 <title>SignUp</title>
             </Helmet>
+            <ToastContainer />
         </div>
     );
 };
