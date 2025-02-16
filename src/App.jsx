@@ -5,11 +5,11 @@ import Footer from './components/Footer'
 function App() {
 
   return (
-    <>
+    <div className='max-w-[1440px] mx-auto lg:px-10 pt-2'>
       <Nav></Nav>
       <Outlet></Outlet>
       <Footer></Footer>
-    </>
+    </div>
   )
 }
 
